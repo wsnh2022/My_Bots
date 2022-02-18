@@ -8,7 +8,14 @@ WinClose, A
 }
 return
 
-
+dates(n)
+{
+m1d := A_Now
+EnvAdd m1d, n, Days
+FormatTime Nday, % m1d, dd.MM.yyyy
+Send, %Nday%
+}
+return
 
 
 
@@ -16,6 +23,10 @@ return
 :x*:bt::bluetooth_Toggle()			; bluetooth Toggle
 $#n::Run ms-availablenetworks:        		; https://windowsloop.com/list-of-app-uri-commands-windows-10/
 *PrintScreen::+#s                              	; TAKE SCEREENSHOT
+:x*:dd::Send, %A_DD%.%A_MM%.%A_YYYY%		; Present date in (xx.xx.xxxx)
+:x*:d-::dates(-1)		                ; Yesterday date
+:x*:d=::dates(+1)			        ; Tommorrow date
+
 
 
 ; ●●●●●●●●●●●●●●●● Wrap With Delimiter Using Functions ●●●●●●●●●●●●●●●●

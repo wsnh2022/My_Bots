@@ -19,14 +19,14 @@ $#n::Run ms-availablenetworks:        		; https://windowsloop.com/list-of-app-ur
 
 
 ; ●●●●●●●●●●●●●●●● Wrap With Delimiter Using Functions ●●●●●●●●●●●●●●●●
-!'::AddDelimiters("""","""","Quotation")		            ; "Quotation" Marks
+!'::AddDelimiters("""","""","Quotation")		        ; "Quotation" Marks
 !5::AddDelimiters("%","%","Percent")		                ; %Percent% Sign
-!9::AddDelimiters("(",")","Bracket")			            ; (Bracket)
+!9::AddDelimiters("(",")","Bracket")			        ; (Bracket)
 ![::AddDelimiters("[","]","Square Brackets")		        ; [Square Brackets]
-~RShift & [::AddDelimiters("{{}","{}}","Parentheses")	    ; {Parentheses}
+~RShift & [::AddDelimiters("{{}","{}}","Parentheses")	    	; {Parentheses}
 ^+Q::AddDelimiters("{U+201C}","{U+201D}","Curly Quotes")	; “Curly Quotes”
 
-AddDelimiters(left, right, types) 							; AddDelimiters %Function%
+AddDelimiters(left, right, types) 				; AddDelimiters %Function%
 {	
 	ToolTip, % left types right
 	send % "^x" left "{CtrlDown}v{CtrlUp}" right
